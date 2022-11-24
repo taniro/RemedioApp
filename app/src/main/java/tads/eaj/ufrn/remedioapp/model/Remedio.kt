@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Remedio (var nome:String, var dosagem:String) {
+data class Remedio (var nome:String, var dosagem:Float) {
     @PrimaryKey(autoGenerate = true)
     var id:Long = 0
 }

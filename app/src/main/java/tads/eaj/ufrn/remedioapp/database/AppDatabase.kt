@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import tads.eaj.ufrn.remedioapp.dao.RemedioDao
 import tads.eaj.ufrn.remedioapp.model.Remedio
 
-@Database(entities = [Remedio::class], version = 1, exportSchema = false)
+@Database(entities = [Remedio::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun remedioDao():RemedioDao
 

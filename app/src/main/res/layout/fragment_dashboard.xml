@@ -8,6 +8,8 @@
         <variable
             name="viewmodel"
             type="tads.eaj.ufrn.remedioapp.ui.dashboard.DashboardViewModel" />
+        <import type="tads.eaj.ufrn.remedioapp.ui.converters.DataBindingConverters"/>
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,7 +55,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:ems="10"
-            android:text="@={viewmodel.remedio.dosagem}"
+            android:text="@={DataBindingConverters.convertFloatToString(viewmodel.remedio.dosagem)}"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
