@@ -19,11 +19,11 @@ class DashboardViewModel @Inject constructor(var repository: RemedioRepository) 
 
     var remedio = MutableLiveData<Remedio>()
 
+    init {
+        remedio.value = Remedio("", 0f)
+    }
 
     fun cadastrarButtonEvent(){
-
-        Log.i("AULA", "Cadastrou?")
-
         viewModelScope.launch {
             withContext(Dispatchers.IO){
                 remedio.value?.let { repository.create(it) }

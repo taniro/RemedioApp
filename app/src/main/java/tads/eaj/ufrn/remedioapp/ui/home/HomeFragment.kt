@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint
 import tads.eaj.ufrn.remedioapp.databinding.FragmentHomeBinding
+import tads.eaj.ufrn.remedioapp.ui.home.adapter.RemedioAdapter
 
 
 @AndroidEntryPoint
@@ -26,6 +27,14 @@ class HomeFragment : Fragment() {
 
         _binding.viewmodel = _viewmodel
         _binding.lifecycleOwner = this
+
+        val adapter = RemedioAdapter()
+
+        _viewmodel.remedios.observe(viewLifecycleOwner){
+            adapter.submitList(it)
+        }
+
+        _binding.recyclerview.adapter = adapter
 
         return _binding.root
     }
